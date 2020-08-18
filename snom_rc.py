@@ -14,6 +14,13 @@ if __name__ == "__main__":
                 controls.press_key(phone_ip,"ENTER")
             elif command == "CANCEL":
                 controls.press_key(phone_ip,"CANCEL")
+            elif command[0:1] == "P":
+                argument = command
+                controls.press_key(phone_ip,argument)
+            elif command[0:1] == "F":
+                argument = command
+                controls.press_key(phone_ip,argument)
+
 
             # arbitrary commands
             elif command == "1":
