@@ -24,14 +24,16 @@ if __name__ == '__main__':
 
             # arbitrary commands
             elif command == '1':
-                argument = input('Enter key command: ')
-                controls.press_key(phone_ip,argument)
+                key_argument = controls.read_argument('key')
+                print(key_argument)
+                controls.press_key(phone_ip,key_argument)
             elif command == '2':
-                argument = input('Enter DTMF number: ')
-                controls.press_key_dtmf(phone_ip,argument)
+                dtmf_argument = controls.read_argument('number')
+                controls.press_key_dtmf(phone_ip,dtmf_argument)
             elif command == '3':
-                argument = input('Enter DTMF number: ')
-                controls.press_number(phone_ip,argument)
+                number_argument = controls.read_argument('number')
+                print('Number is: ', number_argument)
+                controls.press_number(phone_ip,number_argument)
 
             # help
             elif command == 'h' or command == 'help' or command == '?':
