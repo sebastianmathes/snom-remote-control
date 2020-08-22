@@ -10,7 +10,7 @@ F1-X: Send key F1-X\n\
 1: Send arbitrary key command\n\
 2: Send DTMF command\n\
 3: Send number\n\
-q: quit.")
+q: quit.\n")
 
 
 def print_greeting():
