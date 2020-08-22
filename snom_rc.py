@@ -5,6 +5,7 @@ from src import controls
 from src import usage
 
 if __name__ == '__main__':
+    usage.print_greeting()
     phone_ip = input('Enter phone ip: ')
     while True:
         command = input('Do something: ')

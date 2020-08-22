@@ -45,26 +45,27 @@ def send_key(url):
         r = requests.get(url, headers=headers)
         return r.status_code
     except requests.exceptions.ConnectionError:
-        print("Connection error, check if IP and/or port are corret.")
+        print('Connection error, check if IP and/or port are corret.')
         return False
 
 
 def read_argument(mode):
     while True:
-        argument = input("Which command? ")
-        if mode == "key":
+        argument = input('Which command? ')
+        if mode == 'key':
             if argument in commands:
                 return argument
-            elif argument == "list" or argument == "l":
-                list_commands()
+            elif argument == 'list' or argument == 'l':
+                print('Here is a list of available commands:\n', commands)
+                #list_commands()
             else:
-                print("Invalid command, try again or use l/list for help")
+                print('Invalid command, try again or use l/list for help')
 
-        elif mode == "number":
+        elif mode == 'number':
             return argument
 
         else:
-            print("Invalid mode, please check.")
+            print('Invalid mode, please check.')
             return False
 
 
