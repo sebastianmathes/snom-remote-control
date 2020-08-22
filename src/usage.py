@@ -11,3 +11,9 @@ F1-X: Send key F1-X\n\
 2: Send DTMF command\n\
 3: Send number\n\
 q: quit.")
+
+
+def print_greeting():
+    print('-------------------')
+    print('Snom remote control')
+    print('-------------------')
