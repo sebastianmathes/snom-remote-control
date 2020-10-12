@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 import requests
+from requests.auth import HTTPBasicAuth
+from requests.auth import HTTPDigestAuth
 
 headers = {
         'User-Agent': 'Snom remote control v0.1'
@@ -42,7 +44,11 @@ def press_number(phone_ip, number_value, login_credentials):
 
 def send_key(url, login_credentials):
     try:
-        r = requests.get(url, headers=headers)
+        auth_user = login_credentials[0]
+        auth_password = login_credentials[1]
+        r = requests.get(url, headers=headers,
+                         auth=HTTPDigestAuth(auth_user, auth_password))
+        print(r.status_code)
         return r.status_code
     except requests.exceptions.ConnectionError:
         print('Connection error, check if IP and/or port are corret.')

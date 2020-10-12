@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import sys
+from getpass import getpass
 from src import controls
 from src import usage
 
@@ -8,7 +9,7 @@ if __name__ == '__main__':
     usage.print_greeting()
     phone_ip = input('Enter phone ip: ')
     wui_username = input('Enter snom WUI username: ')
-    wui_password = input('Enter snom WUI password: ')
+    wui_password = getpass('Enter snom WUI password: ')
     login_credentials = [wui_username, wui_password]
     while True:
         command = input('Do something: ')
