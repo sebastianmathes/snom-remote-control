@@ -60,8 +60,8 @@ def send_key(url, login_credentials):
 
 def read_argument(mode):
     while True:
-        argument = input('Which command? ')
         if mode == 'key':
+            argument = input('Which command? ')
             if argument in commands:
                 return argument
             elif argument == 'list' or argument == 'l':
@@ -71,6 +71,7 @@ def read_argument(mode):
                 print('Invalid command, try again or use l/list for help')
 
         elif mode == 'number':
+            argument = input('Which number? ')
             return argument
 
         else:
