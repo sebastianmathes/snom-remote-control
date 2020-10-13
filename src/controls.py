@@ -48,7 +48,10 @@ def send_key(url, login_credentials):
         auth_password = login_credentials[1]
         r = requests.get(url, headers=headers,
                          auth=HTTPDigestAuth(auth_user, auth_password))
-        print(r.status_code)
+        #print(r.status_code)
+        if r.status_code != 200:
+            print(f'Got response {r.status_code}, please check.')
+
         return r.status_code
     except requests.exceptions.ConnectionError:
         print('Connection error, check if IP and/or port are corret.')
